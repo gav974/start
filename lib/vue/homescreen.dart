@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 
-
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key }) : super(key: key);
 
@@ -13,32 +11,15 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
-      appBar: AppBar(),
+      appBar: appBar(),
       body: const firstSection(),
     );
   }
 
-  /*--------------------- AppBar ------------------*/
-  Widget appBar() {
-    return AppBar(
-      leading: const IconButton(
-        icon: Icon(Icons.menu,
-          color: Colors.white,
-        ),
-        onPressed: null,
-      ),
-      title: const Text('IMC APP',
-        style:TextStyle(
-          color: Colors.white,
-        ) ,),
 
-    );
 
-    /*--------------------EndAppBAr---------------------------*/
-  }
+
 }
 
 /**************************** premiere section ****************************/
@@ -51,7 +32,7 @@ class firstSection extends StatefulWidget {
   _firstSectionState createState() => _firstSectionState();
 }
 
-
+/*--------------------------skeleton ------------------------------*/
 class _firstSectionState extends State<firstSection> {
   @override
   Widget build(BuildContext context) {
@@ -68,30 +49,29 @@ class _firstSectionState extends State<firstSection> {
               children: [
                 Box(),
               ],),
-            Row(
+            Row(                                    //THIRD row
               children: [
                 Box(),
                 Box(),
           ],),
     ],
         ),
-
-
     );
-
-
   }
-
 }
+
+/*--------------------------skeleton ------------------------------*/
+
+/*--------------------------------- box -> GAbarit de reference <- ------------------------------*/
+
 class Box extends StatelessWidget {
   const Box({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 1,
+      flex: 3,
       child:Container(
-
         height : 200.0,
         width:170.0,
         margin : const EdgeInsets.all(15.0),
@@ -103,7 +83,20 @@ class Box extends StatelessWidget {
     );
   }
 }
+/*--------------------------------- box -> GAbarit de reference <- ------------------------------*/
 
 
+/*--------------------- AppBar ------------------*/
+appBar() => AppBar(
+  title:Text("IMC APP",
+  ),
+  leading: IconButton(
+    icon: Icon(Icons.menu,
+      color: Colors.white,
+    ),
+    onPressed: null,
+  ),
 
+);
 
+/*--------------------- AppBar ------------------*/

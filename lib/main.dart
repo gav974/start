@@ -13,20 +13,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Calculateur IMC',
-      home:  const MyHomePage(),
+
+      home:   MyHomePage(),
       theme: ThemeData(
-        primaryColor: const Color(0xff0a0e21),
+        primaryColor: Colors.white,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xff0a0e21),
+          color: Color(0xff0a0e21),
           centerTitle: true,
-          titleTextStyle: TextStyle(
-            color: Colors.white,
-          ),
         ),
-        scaffoldBackgroundColor:  const Color(0xff0a0e21),
+        scaffoldBackgroundColor: Color(0xff0a0e21),
         buttonTheme: ButtonThemeData(
           buttonColor: Colors.purple,
-
         ),
         ),
 
