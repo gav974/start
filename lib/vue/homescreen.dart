@@ -1,67 +1,142 @@
 import 'package:flutter/material.dart';
 
-
-
+Color colorTheme = const Color(0xff0a0e21);
 
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key }) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
 
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text('u'),
+      appBar:AppBar(),
+      body: firstSection(),
+    );
+  }
+
+  /*--------------------- AppBar ------------------*/
+  appBar(){
+    return AppBar(
+      backgroundColor: colorTheme,
+      leading: IconButton(
+        icon: Icon(Icons.menu,
+          color: Colors.white, ),
+        onPressed: null,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      title: Align(
+        child: Text('IMC APP'),
+        alignment: Alignment.center,
+      ),
+
+    );
+
+    /*--------------------EndAppBAr---------------------------*/
+  }
+}
+
+/**************************** premiere section ****************************/
+
+class firstSection extends StatefulWidget {
+  const firstSection({Key? key}) : super(key: key);
+
+  @override
+  _firstSectionState createState() => _firstSectionState();
+}
+
+class _firstSectionState extends State<firstSection> {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+        child:Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                    child:Container(
+
+                        height : 200.0,
+                        width:170.0,
+                        margin : EdgeInsets.all(15.0),
+                        decoration: BoxDecoration(
+                            borderRadius:BorderRadius.circular(10.0),
+                            color: const Color(0xFF1D1E33)
+                        ),
+                    ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child:Container(
+
+                    height : 200.0,
+                    width:170.0,
+                    margin : EdgeInsets.all(15.0),
+                    decoration: BoxDecoration( borderRadius:BorderRadius.circular(10.0),
+                        color: const Color(0xFF1D1E33)
+                    ),
+                  ),
+                ),
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child:Container(
+                    height : 200.0,
+                    width:170.0,
+                    margin : EdgeInsets.all(15.0),
+                    decoration: BoxDecoration( borderRadius:BorderRadius.circular(10.0),
+                        color: const Color(0xFF1D1E33)
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child:Container(
+
+                    height : 200.0,
+                    width:170.0,
+                    margin : EdgeInsets.all(15.0),
+                    decoration: BoxDecoration(
+                        borderRadius:BorderRadius.circular(10.0),
+                        color: const Color(0xFF1D1E33)
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child:Container(
+
+                    height : 200.0,
+                    width:170.0,
+                    margin : EdgeInsets.all(15.0),
+                    decoration: BoxDecoration( borderRadius:BorderRadius.circular(10.0),
+                        color: const Color(0xFF1D1E33)
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+
+
+
+        )
     );
   }
 }
+
+
+

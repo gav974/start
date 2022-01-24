@@ -7,16 +7,21 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Calculateur IMC',
-      theme: ThemeData(
-        primarySwatch: ,
-      ),
       home:  const MyHomePage(),
+      theme: ThemeData(
+        primaryColor: const Color(0xff0a0e21),
+        scaffoldBackgroundColor: const Color(0xff0a0e21),
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.purple,
+        ),
+        ),
+
     );
   }
 }
