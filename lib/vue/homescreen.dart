@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Color colorTheme = const Color(0xff0a0e21);
+
 
 
 class MyHomePage extends StatefulWidget {
@@ -16,24 +16,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
     return Scaffold(
-      appBar:AppBar(),
-      body: firstSection(),
+      appBar: AppBar(),
+      body: const firstSection(),
     );
   }
 
   /*--------------------- AppBar ------------------*/
-  appBar(){
+  Widget appBar() {
     return AppBar(
-      backgroundColor: colorTheme,
-      leading: IconButton(
+      leading: const IconButton(
         icon: Icon(Icons.menu,
-          color: Colors.white, ),
+          color: Colors.white,
+        ),
         onPressed: null,
       ),
-      title: Align(
-        child: Text('IMC APP'),
-        alignment: Alignment.center,
-      ),
+      title: const Text('IMC APP',
+        style:TextStyle(
+          color: Colors.white,
+        ) ,),
 
     );
 
@@ -46,97 +46,64 @@ class _MyHomePageState extends State<MyHomePage> {
 class firstSection extends StatefulWidget {
   const firstSection({Key? key}) : super(key: key);
 
+
   @override
   _firstSectionState createState() => _firstSectionState();
 }
+
 
 class _firstSectionState extends State<firstSection> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child:Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            Row(                              //premier row
+              children: [
+                Box(),
+                Box(),
+            ],),
+            Row(                                        //second row
+              children: [
+                Box(),
+              ],),
             Row(
               children: [
-                Expanded(
-                  flex: 1,
-                    child:Container(
-
-                        height : 200.0,
-                        width:170.0,
-                        margin : EdgeInsets.all(15.0),
-                        decoration: BoxDecoration(
-                            borderRadius:BorderRadius.circular(10.0),
-                            color: const Color(0xFF1D1E33)
-                        ),
-                    ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child:Container(
-
-                    height : 200.0,
-                    width:170.0,
-                    margin : EdgeInsets.all(15.0),
-                    decoration: BoxDecoration( borderRadius:BorderRadius.circular(10.0),
-                        color: const Color(0xFF1D1E33)
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child:Container(
-                    height : 200.0,
-                    width:170.0,
-                    margin : EdgeInsets.all(15.0),
-                    decoration: BoxDecoration( borderRadius:BorderRadius.circular(10.0),
-                        color: const Color(0xFF1D1E33)
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child:Container(
-
-                    height : 200.0,
-                    width:170.0,
-                    margin : EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                        borderRadius:BorderRadius.circular(10.0),
-                        color: const Color(0xFF1D1E33)
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child:Container(
-
-                    height : 200.0,
-                    width:170.0,
-                    margin : EdgeInsets.all(15.0),
-                    decoration: BoxDecoration( borderRadius:BorderRadius.circular(10.0),
-                        color: const Color(0xFF1D1E33)
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+                Box(),
+                Box(),
+          ],),
+    ],
+        ),
 
 
+    );
 
-        )
+
+  }
+
+}
+class Box extends StatelessWidget {
+  const Box({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 1,
+      child:Container(
+
+        height : 200.0,
+        width:170.0,
+        margin : const EdgeInsets.all(15.0),
+        decoration: BoxDecoration(
+            borderRadius:BorderRadius.circular(10.0),
+            color: const Color(0xFF1D1E33)
+        ),
+      ),
     );
   }
 }
+
 
 
 

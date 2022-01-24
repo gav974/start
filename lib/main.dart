@@ -16,9 +16,17 @@ class MyApp extends StatelessWidget {
       home:  const MyHomePage(),
       theme: ThemeData(
         primaryColor: const Color(0xff0a0e21),
-        scaffoldBackgroundColor: const Color(0xff0a0e21),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xff0a0e21),
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        scaffoldBackgroundColor:  const Color(0xff0a0e21),
         buttonTheme: ButtonThemeData(
           buttonColor: Colors.purple,
+
         ),
         ),
 
